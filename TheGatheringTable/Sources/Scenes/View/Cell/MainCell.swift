@@ -12,6 +12,12 @@ class MainCell: UITableViewCell {
         return imageView
     }()
     
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 22, weight: .bold)
+        return label
+    }()
+    
     // MARK: - Initializers
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,6 +34,7 @@ class MainCell: UITableViewCell {
     
     private func setupHierarchy() {
         addSubview(cardImageView)
+        addSubview(nameLabel)
     }
     
     private func setupLayout() {
@@ -36,6 +43,11 @@ class MainCell: UITableViewCell {
             make.centerY.equalToSuperview()
             make.width.equalTo(120)
             make.height.equalTo(150)
+        }
+        
+        nameLabel.snp.makeConstraints { make in
+            make.leading.equalTo(cardImageView.snp.trailing).offset(16)
+            make.top.equalToSuperview().offset(40)
         }
     }
     
