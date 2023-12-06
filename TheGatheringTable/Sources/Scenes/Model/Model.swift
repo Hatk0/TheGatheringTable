@@ -13,7 +13,7 @@ struct CardElement: Codable {
     let type: String
     let rarity: String
     let text: String
-    let imageURL: String
+    let imageURL: String?
     
     enum CodingKeys: String, CodingKey {
         case name, type, rarity, text
