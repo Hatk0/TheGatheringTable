@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		6CA1A2692B20A5770086E73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1A2682B20A5770086E73E /* AppDelegate.swift */; };
 		6CA1A26B2B20A5770086E73E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1A26A2B20A5770086E73E /* SceneDelegate.swift */; };
-		6CA1A26D2B20A5770086E73E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1A26C2B20A5770086E73E /* ViewController.swift */; };
-		6CA1A2702B20A5770086E73E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA1A26E2B20A5770086E73E /* Main.storyboard */; };
+		6CA1A26D2B20A5770086E73E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1A26C2B20A5770086E73E /* MainViewController.swift */; };
 		6CA1A2722B20A5790086E73E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA1A2712B20A5790086E73E /* Assets.xcassets */; };
 		6CA1A2752B20A5790086E73E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA1A2732B20A5790086E73E /* LaunchScreen.storyboard */; };
+		6CA1A2822B20AE080086E73E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6CA1A2812B20AE080086E73E /* SnapKit */; };
+		6CA1A2842B20AE080086E73E /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 6CA1A2832B20AE080086E73E /* SnapKit-Dynamic */; };
+		6CA1A2892B20AF0A0086E73E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1A2882B20AF0A0086E73E /* Model.swift */; };
+		6CA1A28B2B20AF180086E73E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA1A28A2B20AF180086E73E /* MainView.swift */; };
 		7764B0ACAFC044C212C6B483 /* Pods_TheGatheringTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF352E7C9E13EC13839910B /* Pods_TheGatheringTable.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +24,12 @@
 		6CA1A2652B20A5770086E73E /* TheGatheringTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGatheringTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA1A2682B20A5770086E73E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CA1A26A2B20A5770086E73E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6CA1A26C2B20A5770086E73E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6CA1A26F2B20A5770086E73E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CA1A26C2B20A5770086E73E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6CA1A2712B20A5790086E73E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CA1A2742B20A5790086E73E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CA1A2762B20A5790086E73E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA1A2882B20AF0A0086E73E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6CA1A28A2B20AF180086E73E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8BF352E7C9E13EC13839910B /* Pods_TheGatheringTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGatheringTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A41CF852B2C9453A220328 /* Pods-TheGatheringTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGatheringTable.debug.xcconfig"; path = "Target Support Files/Pods-TheGatheringTable/Pods-TheGatheringTable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,6 +40,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7764B0ACAFC044C212C6B483 /* Pods_TheGatheringTable.framework in Frameworks */,
+				6CA1A2822B20AE080086E73E /* SnapKit in Frameworks */,
+				6CA1A2842B20AE080086E73E /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,15 +69,72 @@
 		6CA1A2672B20A5770086E73E /* TheGatheringTable */ = {
 			isa = PBXGroup;
 			children = (
-				6CA1A2682B20A5770086E73E /* AppDelegate.swift */,
-				6CA1A26A2B20A5770086E73E /* SceneDelegate.swift */,
-				6CA1A26C2B20A5770086E73E /* ViewController.swift */,
-				6CA1A26E2B20A5770086E73E /* Main.storyboard */,
+				6CA1A27D2B20AB920086E73E /* Sources */,
+				6CA1A27C2B20AB8D0086E73E /* Resources */,
+			);
+			path = TheGatheringTable;
+			sourceTree = "<group>";
+		};
+		6CA1A27C2B20AB8D0086E73E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				6CA1A2712B20A5790086E73E /* Assets.xcassets */,
 				6CA1A2732B20A5790086E73E /* LaunchScreen.storyboard */,
 				6CA1A2762B20A5790086E73E /* Info.plist */,
 			);
-			path = TheGatheringTable;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6CA1A27D2B20AB920086E73E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6CA1A27E2B20ABA90086E73E /* App */,
+				6CA1A27F2B20ABAD0086E73E /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6CA1A27E2B20ABA90086E73E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6CA1A2682B20A5770086E73E /* AppDelegate.swift */,
+				6CA1A26A2B20A5770086E73E /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6CA1A27F2B20ABAD0086E73E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6CA1A2852B20AE220086E73E /* Model */,
+				6CA1A2862B20AE280086E73E /* View */,
+				6CA1A2872B20AE2D0086E73E /* Controller */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6CA1A2852B20AE220086E73E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CA1A2882B20AF0A0086E73E /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CA1A2862B20AE280086E73E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CA1A28A2B20AF180086E73E /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6CA1A2872B20AE2D0086E73E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CA1A26C2B20A5770086E73E /* MainViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A87D522E84AC2822B307A86C /* Pods */ = {
@@ -80,7 +143,6 @@
 				F2A41CF852B2C9453A220328 /* Pods-TheGatheringTable.debug.xcconfig */,
 				401EA37367DE750F54BC47BC /* Pods-TheGatheringTable.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,6 +172,10 @@
 			dependencies = (
 			);
 			name = TheGatheringTable;
+			packageProductDependencies = (
+				6CA1A2812B20AE080086E73E /* SnapKit */,
+				6CA1A2832B20AE080086E73E /* SnapKit-Dynamic */,
+			);
 			productName = TheGatheringTable;
 			productReference = 6CA1A2652B20A5770086E73E /* TheGatheringTable.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +204,9 @@
 				Base,
 			);
 			mainGroup = 6CA1A25C2B20A5770086E73E;
+			packageReferences = (
+				6CA1A2802B20AE080086E73E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 6CA1A2662B20A5770086E73E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,7 +223,6 @@
 			files = (
 				6CA1A2752B20A5790086E73E /* LaunchScreen.storyboard in Resources */,
 				6CA1A2722B20A5790086E73E /* Assets.xcassets in Resources */,
-				6CA1A2702B20A5770086E73E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,23 +275,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA1A26D2B20A5770086E73E /* ViewController.swift in Sources */,
+				6CA1A26D2B20A5770086E73E /* MainViewController.swift in Sources */,
 				6CA1A2692B20A5770086E73E /* AppDelegate.swift in Sources */,
 				6CA1A26B2B20A5770086E73E /* SceneDelegate.swift in Sources */,
+				6CA1A28B2B20AF180086E73E /* MainView.swift in Sources */,
+				6CA1A2892B20AF0A0086E73E /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6CA1A26E2B20A5770086E73E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6CA1A26F2B20A5770086E73E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6CA1A2732B20A5790086E73E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -363,13 +425,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AUR8GZBZK7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TheGatheringTable/Info.plist;
+				INFOPLIST_FILE = TheGatheringTable/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,9 +439,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.TheGatheringTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -392,13 +457,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AUR8GZBZK7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TheGatheringTable/Info.plist;
+				INFOPLIST_FILE = TheGatheringTable/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,9 +471,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.TheGatheringTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -434,6 +502,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6CA1A2802B20AE080086E73E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6CA1A2812B20AE080086E73E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6CA1A2802B20AE080086E73E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		6CA1A2832B20AE080086E73E /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6CA1A2802B20AE080086E73E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6CA1A25D2B20A5770086E73E /* Project object */;
 }
