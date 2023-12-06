@@ -27,16 +27,16 @@ class MainCell: UITableViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
+        addSubview(cardImageView)
+    }
+    
+    private func setupLayout() {
         cardImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
             make.width.equalTo(120)
             make.height.equalTo(150)
         }
-    }
-    
-    private func setupLayout() {
-        
     }
     
     // MARK: - Reuse
