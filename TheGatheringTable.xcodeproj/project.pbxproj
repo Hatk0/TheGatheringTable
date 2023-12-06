@@ -13,9 +13,11 @@
 		6CA1A2702B20A5770086E73E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA1A26E2B20A5770086E73E /* Main.storyboard */; };
 		6CA1A2722B20A5790086E73E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA1A2712B20A5790086E73E /* Assets.xcassets */; };
 		6CA1A2752B20A5790086E73E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA1A2732B20A5790086E73E /* LaunchScreen.storyboard */; };
+		7764B0ACAFC044C212C6B483 /* Pods_TheGatheringTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF352E7C9E13EC13839910B /* Pods_TheGatheringTable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		401EA37367DE750F54BC47BC /* Pods-TheGatheringTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGatheringTable.release.xcconfig"; path = "Target Support Files/Pods-TheGatheringTable/Pods-TheGatheringTable.release.xcconfig"; sourceTree = "<group>"; };
 		6CA1A2652B20A5770086E73E /* TheGatheringTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGatheringTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA1A2682B20A5770086E73E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CA1A26A2B20A5770086E73E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		6CA1A2712B20A5790086E73E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CA1A2742B20A5790086E73E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CA1A2762B20A5790086E73E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BF352E7C9E13EC13839910B /* Pods_TheGatheringTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGatheringTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2A41CF852B2C9453A220328 /* Pods-TheGatheringTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGatheringTable.debug.xcconfig"; path = "Target Support Files/Pods-TheGatheringTable/Pods-TheGatheringTable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7764B0ACAFC044C212C6B483 /* Pods_TheGatheringTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				6CA1A2672B20A5770086E73E /* TheGatheringTable */,
 				6CA1A2662B20A5770086E73E /* Products */,
+				A87D522E84AC2822B307A86C /* Pods */,
+				F6FF9391346325E9E1232200 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = TheGatheringTable;
 			sourceTree = "<group>";
 		};
+		A87D522E84AC2822B307A86C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F2A41CF852B2C9453A220328 /* Pods-TheGatheringTable.debug.xcconfig */,
+				401EA37367DE750F54BC47BC /* Pods-TheGatheringTable.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F6FF9391346325E9E1232200 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BF352E7C9E13EC13839910B /* Pods_TheGatheringTable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CA1A2792B20A5790086E73E /* Build configuration list for PBXNativeTarget "TheGatheringTable" */;
 			buildPhases = (
+				AE53D00D84D1877997575BC3 /* [CP] Check Pods Manifest.lock */,
 				6CA1A2612B20A5770086E73E /* Sources */,
 				6CA1A2622B20A5770086E73E /* Frameworks */,
 				6CA1A2632B20A5770086E73E /* Resources */,
+				338F40E4C2A4E08EAF7F128F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		338F40E4C2A4E08EAF7F128F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheGatheringTable/Pods-TheGatheringTable-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheGatheringTable/Pods-TheGatheringTable-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheGatheringTable/Pods-TheGatheringTable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE53D00D84D1877997575BC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheGatheringTable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6CA1A2612B20A5770086E73E /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		6CA1A27A2B20A5790086E73E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2A41CF852B2C9453A220328 /* Pods-TheGatheringTable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +385,7 @@
 		};
 		6CA1A27B2B20A5790086E73E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 401EA37367DE750F54BC47BC /* Pods-TheGatheringTable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
