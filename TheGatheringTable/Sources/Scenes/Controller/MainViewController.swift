@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     // MARK: - Setup
     
     private func setupView() {
+        title = "Cards"
+        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
     }
     
