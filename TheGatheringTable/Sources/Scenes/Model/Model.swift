@@ -2,13 +2,13 @@ import Foundation
 
 // MARK: - Card
 
-struct Card: Codable {
+struct Card: Decodable {
     let cards: [CardElement]
 }
 
 // MARK: - CardElement
 
-struct CardElement: Codable {
+struct CardElement: Decodable {
     let name: String
     let type: String
     let rarity: String
