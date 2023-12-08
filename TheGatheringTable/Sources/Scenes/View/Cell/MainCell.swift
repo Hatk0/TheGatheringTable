@@ -3,7 +3,21 @@ import SnapKit
 
 class MainCell: UITableViewCell {
     
-    static let identifier = "MainCell"
+    static let identifier = "MainTableViewCell"
+    
+    var cardElement: CardElement? {
+        didSet {
+            nameLabel.text = cardElement?.name
+            typeLabel.text = cardElement?.type
+            
+            guard let imagePath = cardElement?.imageURL,
+                  let imageURL = URL(string: imagePath) else {
+                cardImageView.image = UIImage(named: "square-image")
+                return
+            }
+            ImageLoader.shared.loadImage(from: imageURL, into: cardImageView)
+        }
+    }
 
     // MARK: - UI
     
@@ -14,13 +28,13 @@ class MainCell: UITableViewCell {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
     private lazy var typeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     
@@ -65,4 +79,9 @@ class MainCell: UITableViewCell {
     
     // MARK: - Reuse
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.accessoryType = .none
+        self.cardElement = nil
+    }
 }
