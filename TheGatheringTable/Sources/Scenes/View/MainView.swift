@@ -13,6 +13,7 @@ class MainView: UIView {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search"
         searchBar.searchBarStyle = .minimal
+        searchBar.keyboardType = .webSearch
         searchBar.delegate = self
         return searchBar
     }()
@@ -93,6 +94,7 @@ class MainView: UIView {
             return
         }
         searchActionHandler?(searchText)
+        endEditing(true)
     }
 }
 
