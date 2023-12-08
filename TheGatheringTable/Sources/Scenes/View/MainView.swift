@@ -13,6 +13,14 @@ final class MainView: UIView {
         return searchBar
     }()
     
+    lazy var searchButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Search", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var mainTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         return tableView
@@ -39,6 +47,7 @@ final class MainView: UIView {
     
     private func setupHierarchy() {
         addSubview(searchBar)
+        addSubview(searchButton)
         addSubview(mainTableView)
     }
     
@@ -49,9 +58,24 @@ final class MainView: UIView {
             make.height.equalTo(50)
         }
         
-        mainTableView.snp.makeConstraints { make in
-            make.top.left.bottom.right.equalToSuperview()
+        searchButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.centerY.equalTo(searchBar)
+            make.width.equalTo(80)
+            make.height.equalTo(50)
         }
+        
+        mainTableView.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(10)
+            make.left.bottom.right.equalToSuperview()
+        }
+    }
+    
+    // MARK: - Action
+    
+    @objc
+    func buttonTapped() {
+        
     }
 }
 
