@@ -11,6 +11,7 @@ class MainViewController: UIViewController {
     
     override func loadView() {
         mainView = MainView()
+        mainView?.mainViewController = self
         view = mainView
     }
     
@@ -20,6 +21,7 @@ class MainViewController: UIViewController {
         setupView()
         configure()
         fetchCard()
+        setupSearchHandler()
     }
     
     // MARK: - Setup
@@ -30,18 +32,35 @@ class MainViewController: UIViewController {
         view.backgroundColor = .systemBackground
     }
     
-    // MARK: - Fetch
+    // MARK: - Methods
+    
+    private func setupSearchHandler() {
+        mainView?.searchActionHandler = { [weak self] searchText in
+            self?.searchForCard(with: searchText)
+        }
+    }
     
     func fetchCard() {
         CardManager.shared.fetchCard { [weak self] cards in
-                if let cards = cards {
-                    self?.card = cards
-                    self?.mainView?.mainTableView.reloadData()
-                } else {
-                    print("Failed to fetch cards")
-                }
+            if let cards = cards {
+                self?.card = cards
+                self?.mainView?.mainTableView.reloadData()
+            } else {
+                self?.mainView?.showAlert(message: "Failed to fetch cards")
             }
         }
+    }
+    
+    func searchForCard(with searchText: String) {
+        guard !searchText.isEmpty else {
+            fetchCard()
+            return
+        }
+
+        let filteredCards = card.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        self.card = filteredCards
+        mainView?.mainTableView.reloadData()
+    }
     
     // MARK: - Configure
     

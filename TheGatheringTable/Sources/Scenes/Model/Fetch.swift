@@ -6,15 +6,16 @@ class CardManager {
     
     private init() {}
     
-    public func fetchCard(completion: @escaping ([CardElement]?) -> Void) {
+    func fetchCard(completion: @escaping ([CardElement]?) -> Void) {
         let request = AF.request("https://api.magicthegathering.io/v1/cards")
-        request.responseDecodable(of: Card.self) { (data) in
-            guard let cardData = data.value else {
+        request.responseDecodable(of: Card.self) { response in
+            switch response.result {
+            case .success(let cardData):
+                completion(cardData.cards)
+            case .failure(let error):
+                print("Error fetching card data:", error)
                 completion(nil)
-                return
             }
-            let cards = cardData.cards
-            completion(cards)
         }
     }
 }
