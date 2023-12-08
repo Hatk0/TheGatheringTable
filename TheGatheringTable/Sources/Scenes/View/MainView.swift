@@ -3,6 +3,8 @@ import SnapKit
 
 final class MainView: UIView {
     
+    weak var mainViewController: MainViewController?
+    
     // MARK: - UI
     
     lazy var searchBar: UISearchBar = {
@@ -69,6 +71,14 @@ final class MainView: UIView {
             make.top.equalTo(searchBar.snp.bottom).offset(10)
             make.left.bottom.right.equalToSuperview()
         }
+    }
+    
+    // MARK: - Alert
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        mainViewController?.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Action
