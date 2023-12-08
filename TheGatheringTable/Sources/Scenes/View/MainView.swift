@@ -1,7 +1,9 @@
 import UIKit
 import SnapKit
 
-final class MainView: UIView {
+class MainView: UIView {
+    
+    var searchActionHandler: ((String) -> Void)?
     
     weak var mainViewController: MainViewController?
     
@@ -56,7 +58,8 @@ final class MainView: UIView {
     private func setupLayout() {
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalTo(searchButton.snp.leading)
             make.height.equalTo(50)
         }
         
@@ -85,12 +88,22 @@ final class MainView: UIView {
     
     @objc
     func buttonTapped() {
-        
+        guard let searchText = searchBar.text, !searchText.isEmpty else {
+            showAlert(message: "Please enter a search query")
+            return
+        }
+        searchActionHandler?(searchText)
     }
 }
 
-// MARK: - Extensions
-
 extension MainView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        mainViewController?.searchForCard(with: searchText)
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+        mainViewController?.fetchCard()
+    }
 }
